@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items List</title>
+    <style>
+      body { font-family: Arial, sans-serif; }
+      form { width: 300px; margin: 0 auto; }
+      label, input { display: block; margin: 10px 0; }
+  </style>
+</head>
+<body>
+    <h1>CRUD Template</h1>
+    <h1>Create Item</h1>
+    <form action="/api/create" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        <button type="submit">Create</button>
+    </form>
+    <h1>Update Item</h1>
+    <form action="/api/update?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <label for="id">Item ID:</label>
+        <input type="text" id="id" name="id" required>
+        <label for="name">New Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="quantity">New Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        <button type="submit">Update</button>
+    </form>
+    <h1>Delete Item</h1>
+    <form action="/api/delete?_method=DELETE" method="POST">
+        <label for="id">Item ID:</label>
+        <input type="text" id="id" name="id" required>
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>
